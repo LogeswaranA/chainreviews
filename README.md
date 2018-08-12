@@ -2,9 +2,9 @@
 * Implemented a DApp to create a platform for Reviews & Rewards System on Ethereum Framework.
 
 #TEAM
-* Logeswaran Audhikesavan
-* Kushal Seth
-* Shishir Agarwal
+* Logeswaran Audhikesavan - https://www.linkedin.com/in/logeswaranaudhikesavan/
+* Kushal Seth             - https://www.linkedin.com/in/sethkushal/
+* Shishir Agarwal         - https://www.linkedin.com/in/shishir0agrawal/
 
 # GitHub Page
  Local instance of (https://github.com/LogeswaranAudhikesavan/chainreviews/)
@@ -20,6 +20,18 @@
 * Reviewers cannot upvote/downvote their own reviews, which helps eliminate fake review counts
 
 # STEPS to Install / Setup
+1) Clone the repositories https://github.com/LogeswaranAudhikesavan/chainreviews.git using following command
+git clone https://github.com/LogeswaranAudhikesavan/chainreviews.git
+2) do run "npm install" command to ensure node packages are up-to-date & in sync
+3) Ensure you have "Ganache" & It is running status
+4) Ensure you have "MetaMask" extensions added into chrome & enabled custom RPC to sync the accounts with Ganache
+5) Using below command to deploy the contract into Ganache
+   truffle migrate --network ganache --compile-all --reset
+6) Once it is migrated successfully, run below command to launch the server
+   npm run dev
+7) You can add "reviews" using "add my review", choose file(photos) & upload. this will upload your pic in IPFS & return back the hash key, once it is showing succesuflly upload. Click submit to add your reviews into Blockchain.
+8) Now, choose anotherr account in metamask, now you can see two button enabled (upvote/downvote). if reviews are upvoted, then original "reviews provider" will get some ether(0.0001) as rewards
+9) if downvotes, same will be reduced from user account.
 
 # Challenges:
 * Faced issues using Metamask,sometimes RPC error occured
@@ -36,8 +48,14 @@
 * Testing was done using javascript instead of a solidity contract creation way.
 * Javascript testing method used the Mocha framework
   
-# Future Enhancements:
-* It helps service provider to get the reviews from our Decentralized System & integrate that into centralized
-
 # Build With:
-* Solidity, MetaMask, Web3js, Truffle, Ganache, Shell script, EVM Framework. JQuery
+* Solidity,IPFS, MetaMask, Web3js, Truffle, Ganache, Shell script, EVM Framework. JQuery, 
+
+# Future Enhancements:
+* It helps service provider to get the reviews from our Decentralized System & integrate that into their centralized system which will eliminate fake reviews.
+* Since, users are being rewarded, increase in customer genuine reviews will be more,so platform(Smart contract) address will transfer ethers to respective reviewers.
+* To Integrate "DAI" framework, which will helps user to conver ether into DAI and exchange at any point of time. Since 1DAI = 1$
+
+Snapshot-
+
+
