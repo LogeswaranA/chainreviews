@@ -8,6 +8,12 @@
 
 # GitHub Page
  Local instance of (https://github.com/LogeswaranAudhikesavan/chainreviews/)
+ 
+# Youtube Link for Video Demonstration
+  https://www.youtube.com/watch?v=cTzEoCjJRQM
+
+# PowerPoint Presentation
+  https://www.slideshare.net/shishiragrawal5/ethexplorer
 
 # Inspiration:
 * ETHIndia Hackathon
