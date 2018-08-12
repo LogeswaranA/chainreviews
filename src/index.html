@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Re-Reviews</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Application -->
+  <link href="css/app.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+        <section className="search-section home-search">
+            <div className="masthead text-center">
+               <div className="container">
+                 <div className="row">
+                    <div className="col-lg-8 mx-md-auto">
+                       <h1 style="text-align: left;">CHAIN REVIEWS</h1>
+                       <p style="text-align: left; font-size:18px" className="lead text-muted">BLOCKCHAIN-POWERED REVIEWS & REWARDS SYSTEM </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+         </section>
+    </div>
+
+    <div class="col-md-12" id="review-list">
+      <div class="row">
+        <div class="col-lg-12" style="background-color: #677083 !important;color: white; margin-bottom: 21px">
+          <p id="account" class="welcome pull-right" style="padding-top: 11px;"></p>
+          <p id="accountBalance" class="welcome pull-left" style="padding-top: 11px;"></p>
+        </div>
+      </div>
+
+      <div class="row panel panel-default">
+        <div class="panel-heading clearfix" style="background-color: white !important;">
+          <div class="panel-title">
+            <button class="btn btn-info btn-lg pull-left" data-toggle="collapse" data-target="#events" aria-expanded="false" aria-controls="events">Log</button>
+            <button class="btn btn-info btn-lg center" data-toggle="collapse" data-target="#daiconversion" aria-expanded="false" style="margin-left: 348px;">Dai Conversion</button>
+            <button class="btn btn-info btn-lg pull-right" data-toggle="modal" data-target="#addReview">Add My Review</button>
+          </div>
+        </div>
+        <ul id="events" class="collapse list-group"></ul>
+      </div>
+
+      <div id="reviewsRow" class="row">
+        <!-- Reviews LOAD HERE -->
+      </div>
+    </div>
+  </div>
+
+  <div id="reviewTemplate" style="display: none;">
+    <div class="row-lg-12">
+      <div class="panel panel-default panel-article">
+        <div class="panel-heading" style="background-color: skyblue !important;">
+          <h3 class="panel-title"></h3>
+        </div>
+        <div class="panel-body" id="js-panel-body-split">
+            <div class="col-sm-3 col-md-6">
+                <strong>Comments</strong>: <span class="review-description"></span><br/>
+                <strong>Review Added by</strong>: <span class="review-seller"></span><br/>
+                <strong>Upvotes</strong>: <span class="review-upvotes"></span><br/>
+                <strong>Rewards</strong>: <span class="review-rewards"></span><br/>
+                <strong>Downvotes</strong>: <span class="review-downvotes"></span><br/>
+            </div>
+            <div class="col-sm-9 col-md-6">
+              <img src="" class="js-image-url" align="right" alt="" height="111" width="116" /> 
+            </div>
+
+
+        </div>
+        <div class="panel-footer js-review-footer" style="background-color: white !important;">
+          <button type="button" style="background-color: grey !important; border-color: gray !important" class="btn btn-primary btn-success btn-buy js-upvote" data-flag="upflag" onclick="App.viewReview('upflag'); return false;">Upvote</button>
+          <button type="button" style="background-color: grey !important; border-color: gray !important" class="btn btn-primary btn-success btn-buy js-upvote" data-flag="downflag" onclick="App.viewReview('downflag'); return false;">Downvote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal form to publish a review -->
+  <div class="modal fade" id="addReview" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add your reviews</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-lg-12">
+              <form>
+                <div class="form-group">
+                  <label for="review_name">Product / Service Name</label>
+                  <input type="text" class="form-control" id="review_name" placeholder="Enter the serive/product name, you want to review">
+                </div>
+                <div class="form-group">
+                  <label for="description">Comments</label>
+                  <textarea type="text" class="form-control vresize" id="review_description" placeholder="Describe your experience" maxlength="255"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="memories">Your Memories</label>
+                  <input className="form-control" type="file" name="memories" id="memories" /> </div>
+                  <button type="button" class="btn btn-primary btn-success js-uploaded-hash" data-hash="" onclick="App.uploaddoc(); return false;" style="background-color: #5bc0de; border-color: #5bc0de;">Upload</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary btn-success" data-dismiss="modal" onclick="App.addReview(); return false;" style="background-color: #5bc0de; border-color: #5bc0de;">Submit</button>
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="footer" class="container">
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="navbar-inner navbar-content-center text-center">
+        <p class="text-muted" credit><a href="#">EthExplorers</a> - &copy; 2018 - <a href="https://github.com/ethexplorers" class="fa fa-github" aria-hidden="true"></a></p>
+
+      </div>
+    </nav>
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/jquery.PersistPlugin.js"></script>
+  <script src="js/Buffer.js"></script>
+  <script src="https://unpkg.com/ipfs-api/dist/index.min.js"></script>
+  <script src="https://unpkg.com/ipfs-api@9.0.0/dist/index.js"
+ integrity="sha384-5bXRcW9kyxxnSMbOoHzraqa7Z0PQWIao+cgeg327zit1hz5LZCEbIMx/LWKPReuB"
+ crossorigin="anonymous"></script>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
