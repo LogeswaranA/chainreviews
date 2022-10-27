@@ -1,67 +1,37 @@
-# BLOCKCHAIN Powered Reviews & Rewards System
-* Implemented a DApp to create a platform for Reviews & Rewards System on Ethereum Framework.
+# BLOCKCHAIN POWERED DECENTRALIZED REVIEWS & REWARDS SYSTEM
+- Implemented a DAPP to create a platform for Reviews & Rewards System on Ethereum Framework.
 
-#TEAM
-* Logeswaran Audhikesavan - https://www.linkedin.com/in/logeswaranaudhikesavan/
-* Kushal Seth             - https://www.linkedin.com/in/sethkushal/
-* Shishir Agarwal         - https://www.linkedin.com/in/shishir0agrawal/
+# CONNECTING THE BLOCKS
+- We worked on this project at #ETHINDIA HACKATHON. Not to miss, but as a team (Lokesh, Shishir and me) made this up and working.
 
-# GitHub Page
- Local instance of (https://github.com/LogeswaranAudhikesavan/chainreviews/)
- 
-# Youtube Link for Video Demonstration
-  https://www.youtube.com/watch?v=cTzEoCjJRQM
+- Please have a look at the video that we have in README_version_1.md, to get the background of the project.
 
-# PowerPoint Presentation
-  https://www.slideshare.net/shishiragrawal5/ethexplorer
+- Just to summarize, I would love to mention in few line
 
-# Inspiration:
-* ETHIndia Hackathon
+> We have lot of reviewers accross the world. People are putting up their efforts to give reviews. If they are moving to a new platform, then they have to put their efforts all over again. We thought to bring it on Decentralized system where we can give our product as open source API and also as a stand alone appliction. The Application users will upvote and downvote a reviewer. Based on the upvote and downvote we give them some bounties. We were removing the third party influence and making the system more efficient for reviewers.  
 
-# What it does:
-* Any users, will be able to submit their reviews on any products/services.- They will be represented as Reviewers.
-* Any users, who is reviewing those reviews & can up-vote or down-vote basis their opinions.
-* If a reviews get Upvoted, then a minute fraction of ether(Say - 0.0001) will be transferred to "Original Reviewer" address. 
-* If a reviews get DownVoted, then nothing happens, except downvote count get increases. If Downvote limit reaches more than 50, then "original reviewers" will be deducted the minuet fraction of ether..(Say - 0.00001)
-* Reviewers cannot upvote/downvote their own reviews, which helps eliminate fake review counts
+- Now, let's disuss, why which point we missed in Hackathon.
 
-# STEPS to Install / Setup
-1) Clone the repositories https://github.com/LogeswaranAudhikesavan/chainreviews.git using following command
-git clone https://github.com/LogeswaranAudhikesavan/chainreviews.git
-2) do run "npm install" command to ensure node packages are up-to-date & in sync
-3) Ensure you have "Ganache" & It is running status
-4) Ensure you have "MetaMask" extensions added into chrome & enabled custom RPC to sync the accounts with Ganache
-5) Using below command to deploy the contract into Ganache
-   truffle migrate --network ganache --compile-all --reset
-6) Once it is migrated successfully, run below command to launch the server
-   npm run dev
-7) You can add "reviews" using "add my review", choose file(photos) & upload. this will upload your pic in IPFS & return back the hash key, once it is showing succesuflly upload. Click submit to add your reviews into Blockchain.
-8) Now, choose anotherr account in metamask, now you can see two button enabled (upvote/downvote). if reviews are upvoted, then original "reviews provider" will get some ether(0.0001) as rewards
-9) if downvotes, same will be reduced from user account.
+> Question was: HOW WE WILL PROTECT OUR SYSTEM FROM MALICIOUS THIRD PARTY USERS. SUPPOSE, A PERSON HACKS  AND BECOMES MORE POWERFUL USING UPVOTES.
 
-# Challenges:
-* Faced issues using Metamask,sometimes RPC error occured
-* Installing "Embark Status" was quite challenging. So we ended up using traditional method.
-* Test case debugging
+# THIS QUESTION IS WHAT I THINK, WE SHOULD RESOLVE NOW
+- It's Opensource. come and suggest us.
 
-# Implementation:
-* Developed using Solidity and web3.js
-  * used node.js, web3 and solc compiler
-  * used Remix for contract testing
-  * Used truffle framework in order to the ease developement process
-* Testing of smart contracts was done on 
-  * Ganache (Private Local Blockchain)
-* Testing was done using javascript instead of a solidity contract creation way.
-* Javascript testing method used the Mocha framework
-  
-# Build With:
-* Solidity,IPFS, MetaMask, Web3js, Truffle, Ganache, Shell script, EVM Framework. JQuery, 
-
-# Future Enhancements:
-* It helps service provider to get the reviews from our Decentralized System & integrate that into their centralized system which will eliminate fake reviews.
-* Since, users are being rewarded, increase in customer genuine reviews will be more,so platform(Smart contract) address will transfer ethers to respective reviewers.
-* To Integrate "DAI" framework, which will helps user to conver ether into DAI and exchange at any point of time. Since 1DAI = 1$
-
-Snapshot-
+- My suggestion is: 
+* Our system will create a side chain automatically in regular duration of time. 
+* It will search for powerful annonymous users and makes a list. 
+* Then, it will randomly select some nodes from that side chain and ask them to verify.
+* Obvious, we will reward the reviewing nodes.
+* And if any malicious user is found, we will block them and ask them to verify their Identity.
+* We can use the concept of Polkadots
 
 
+# REVENUE MODEL
+- Obvious, without the REVENUE MODEL, things are of no use.
+
+* Our review system will earn through our booking system. 
+* We have a plan to build a one stop booking system for travellers.
+
+
+
+LET'S MAKE IT ALIVE !!! 
